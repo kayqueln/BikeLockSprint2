@@ -30,11 +30,12 @@ public class Main {
 	}
 	
 	public static void main(String[] args) throws HeadlessException, ParseException {
-		Cadastro cadastro = new Cadastro(texto("Nome"), texto("Sobrenome"), texto("CPF"), texto("Senha"));
-		Usuario usuario = new Usuario(texto("E-mail"));
+		Cadastro cadastro = new Cadastro(texto("Nome"), texto("Sobrenome"), texto("CPF"));
+		Usuario usuario = new Usuario(texto("E-mail"), texto("Senha"));
 		Telefone telefone = new Telefone(texto("Celular"), texto("Comercial"), texto("Contato"), texto("Fixo"));
 		Endereco endereco = new Endereco(texto("Logradouro"), inteiro("Número"), texto("CEP"), texto("Bairro"), texto("Cidade"), texto("Estado"));
 		Seguro seguro = new Seguro(decimal("Valor do seguro"), data("Data de validação"), data("Data de pagamento"), texto("Método de pagamento"));
+		Vistoria vistoria = new Vistoria(data("Data da vistoria"), texto("Avarias"), texto("Observações"), texto("Estado da bike"));
 		Bike bike = new Bike(texto("Marca da bike"), inteiro("Ano de fabricação"), texto("Modelo"), texto("Número de série"), decimal("Preço"));	
 		Fotos fotos = new Fotos(texto("Formato da foto"), texto("Resolução da foto"), data("Data de envio"));	
 		Modificacoes modificacoes = new Modificacoes(data("Data de modificação da bike"), decimal("valor da modificação"), texto("Modificação"));
@@ -44,6 +45,8 @@ public class Main {
 		usuario.setTelefone(telefone);
 		usuario.setSeguro(seguro);
 		seguro.setBike(bike);
+		seguro.setVistoria(vistoria);
+		vistoria.setBike(bike);
 		bike.setModificacoes(modificacoes);
 		bike.setFotos(fotos);
 		

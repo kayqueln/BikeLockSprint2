@@ -5,7 +5,6 @@ public class Cadastro {
 	private String nome;
 	private String sobrenome;
 	private String cpf;
-	private String senha;
 	private Usuario usuario;
 
 	public Cadastro() {
@@ -13,20 +12,18 @@ public class Cadastro {
 
 	}
 
-	public Cadastro(String nome, String sobrenome, String cpf, String senha) {
+	public Cadastro(String nome, String sobrenome, String cpf) {
 		super();
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.cpf = cpf;
-		this.senha = senha;
 	}
 
-	public Cadastro(String nome, String sobrenome, String cpf, String senha, Usuario usuario) {
+	public Cadastro(String nome, String sobrenome, String cpf, Usuario usuario) {
 		super();
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.cpf = cpf;
-		this.senha = senha;
 		this.usuario = usuario;
 	}
 
@@ -54,16 +51,8 @@ public class Cadastro {
 		this.cpf = cpf;
 	}
 
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
 	@Override
 	public String toString() {
-		return "\nCadastro [Nome: " + nome + ", Sobrenome: " + sobrenome + ", CPF: " + cpf + ", Senha: " + senha + "]" + usuario;
+		return "\nCadastro [Nome: " + nome + ", Sobrenome: " + sobrenome + ", CPF: " + cpf  + "]" + usuario;
 	}
 }

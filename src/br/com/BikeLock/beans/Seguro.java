@@ -9,6 +9,7 @@ public class Seguro {
 	private Date dataValidacao;
 	private Date dataPagamento;
 	private String metodoPagamento;
+	private Vistoria vistoria;
 	private Bike bike;
 
 	public Seguro() {
@@ -16,7 +17,8 @@ public class Seguro {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Seguro(double valor, Date dataValidacao, Date dataPagamento, String metodoPagamento, Bike bike) {
+	public Seguro(double valor, Date dataValidacao, Date dataPagamento, String metodoPagamento, Vistoria vistoria,
+			Bike bike) {
 		super();
 		this.valor = valor;
 		this.dataValidacao = dataValidacao;
@@ -67,6 +69,14 @@ public class Seguro {
 		this.metodoPagamento = metodoPagamento;
 	}
 
+	public Vistoria getVistoria() {
+		return vistoria;
+	}
+
+	public void setVistoria(Vistoria vistoria) {
+		this.vistoria = vistoria;
+	}
+
 	public Bike getBike() {
 		return bike;
 	}
@@ -74,7 +84,7 @@ public class Seguro {
 	public void setBike(Bike bike) {
 		this.bike = bike;
 	}
-	
+
 	public double valorSeguro() {
 		double valorSeguro = getBike().valorTotal() * 0.015;
 		return valorSeguro;
@@ -82,7 +92,7 @@ public class Seguro {
 
 	@Override
 	public String toString() {
-		return "\nSeguro [Valor: " + valor + ", Data de validação: " + getDataValidacao() + ", Data de pagamento: " + getDataPagamento()
-				+ ", Método de pagamento: " + metodoPagamento + "]" + bike;
+		return "\nSeguro [Valor: " + valor + ", Data de validação: " + getDataValidacao() + ", Data de pagamento: "
+				+ getDataPagamento() + ", Método de pagamento: " + metodoPagamento + "]" + vistoria;
 	}
 }
