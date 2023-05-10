@@ -3,6 +3,7 @@ package br.com.BikeLock.beans;
 public class Usuario {
 
 	private String email;
+	private String senha;
 	private Endereco endereco;
 	private Telefone telefone;
 	private Seguro seguro;
@@ -12,17 +13,19 @@ public class Usuario {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Usuario(String email, Endereco endereco, Telefone telefone, Seguro seguro) {
+	public Usuario(String email, String senha, Endereco endereco, Telefone telefone, Seguro seguro) {
 		super();
 		this.email = email;
+		this.senha = senha;
 		this.endereco = endereco;
 		this.telefone = telefone;
 		this.seguro = seguro;
 	}
 	
-	public Usuario(String email) {
+	public Usuario(String email, String senha) {
 		super();
 		this.email = email;
+		this.senha = senha;
 	}
 
 	public Seguro getSeguro() {
@@ -39,6 +42,14 @@ public class Usuario {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	public Endereco getEndereco() {
@@ -60,7 +71,7 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "\nUsuario [E-mail: " + email + "]" + endereco +  telefone + seguro;
+		return "\nUsuario [E-mail: " + email + ", Senha: " + senha + "]" + endereco +  telefone + seguro;
 	}
 
 }
